@@ -7,6 +7,6 @@
   </a>
   <!-- Badge de Licença MIT -->
   <a href="https://github.com/luizme7/unifacs.projeto-e-engenharia-de-software/blob/development/LICENSE">
-    <img src="https://github.com/luizme7/unifacs.projeto-e-engenharia-de-software/blob/development/LICENSE" alt="License: MIT">
+    <img src="https://shields.io" alt="License: MIT">
   </a>
 </p>

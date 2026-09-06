@@ -1,0 +1,11 @@
+# Maven build output
+target/
+
+# IDE metadata
+.idea/
+*.iml
+.vscode/
+
+# Java runtime files
+hs_err_pid*
+replay_pid*

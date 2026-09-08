@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mapa Saúde</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section class="header">
+            <div class="nav">
+                <div class="nav-item">
+                    SaúdeMap
+                </div>
+                <div class="nav-item">
+                    <div class="search bar">
+                        Pesquise uma cidade, bairro ou unidade de saúde
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="local bar">
+                        Minha localização
+                    </div>
+                </div>
+                <div class="nav-item">
+                    Sobre
+                </div>
+            </div>
+        </section>
+        <section class="mounth">
+            <div class="displayer">
+                <div class="displaytopic">
+                    <label class="title">Cobertura de saúde</label>
+                    <label id="total">248 estabelecimentos,</label>
+                    <div class="group">
+                        <label id="count_ubs">126 UBS,</label>
+                        <label id="count_hospitais">34 hospitais,</label>
+                        <label id="count_upas">18 UPAs,</label>
+                    </div>
+                    <label id="count_outros">70 outros</label>
+                </div>
+                <div class="displayfilters">
+                    <div class="displaysizefilter">
+                        <label class="title">Filtros</label>
+                        <div class="filter" id="filter_ubs">UBS</div>
+                        <div class="filter" id="filter_upas">UPA</div>
+                        <div class="filter" id="filter_hospitais">Hospital</div>
+                        <div class="filter" id="filter_outros">Outros</div>
+                    </div>
+                    <div class="displaysizelevel">
+                        <div class="progress-circle displaysizeprogress" style="--progress: 25;"></div>
+                        <button class="displaysizebtn">25%</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    color: #000000;
+    background-color: #a8ccd9;
+    font-family: Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fefefe;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 10px;
+    border: 2px solid #fefefe;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #58a6ff;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #30363d #fefefe;
+}
+
+/* Header */
+.nav {
+    position: fixed;
+    width: stretch;
+    white-space: nowrap;
+    background-color: #fefefe;
+    box-shadow: 0 0.8rem 1.2rem -0.6rem rgba(0, 0, 0, 0.35);
+    height: calc(50% - 45vh + 4rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1vw 4vw;
+    gap: 2vw;
+    left: 0;
+    top: 0;
+}
+
+.nav > :nth-child(1) {
+    flex: 0 0 auto;
+}
+
+.nav > :nth-child(2) {
+    flex: 5;
+}
+
+.nav > :nth-child(3) {
+    flex: 1;
+}
+
+.nav > :nth-child(4) {
+    flex: 0 0 auto;
+}
+
+.bar {
+    padding: 1rem;
+    border: solid 1px #858585;
+    border-radius: 0.75rem;
+}
+
+.local {
+    background-color: #dee8f2;
+    font-weight: bold;
+    color: #13375d;
+    border: none;
+}
+
+.displayer {
+    position: fixed;
+    left: 5%;
+    top: 25%;
+    width: 25%;
+    height: 50%;
+    background: #fefefe;
+    border-radius: 0.75rem;
+}
+
+.displayfilters {
+    display: flex;
+    align-items: center;
+}
+
+.displaysizefilter {
+    flex: 1;
+}
+
+@property --progress {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+.displaysizebtn {
+    width: stretch;
+    height: stretch;
+    outline: none;
+    position: relative;
+    background: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent !important;
+    font-size: clamp(1.75vh, calc(3vw - 3vh), 4vh);
+    border-radius: 100%;
+    font-weight: bold;
+    color: #555454;
+    cursor: pointer;
+}
+.displaysizelevel {
+    flex: 0.8;
+    width: auto;
+    height: auto;
+    align-content: center;
+    text-align: center;
+    position: relative;
+    aspect-ratio: 1 / 1;
+}
+.displaysizeprogress {
+    width: stretch;
+    height: stretch;
+    position: absolute;
+    border-radius: 100%;
+    align-self: center;
+    border: solid #fefefe 0.2rem;
+}
+.progress-circle {
+    background: conic-gradient(#2aac78 calc(var(--progress, 0) * 1%), #d8e1e6 0deg);
+    mask: radial-gradient(circle at center, transparent 0, transparent 50%, white 50%);
+    -webkit-mask: radial-gradient(circle at center, transparent 0, transparent 50%, white 50%);
+    transition-property: --progress, opacity;
+    transition-duration: clamp(0s, calc(var(--progress) * 0.25s), 0.25s), 0.2s;
+    transition-delay: 0s;
+}
+.displaysizelevel:has(.displaysizebtn:hover) .progress-circle {
+    margin: 1rem;
+    transition-property: --progress, width, height;
+    transition-duration: 0.25s;
+    transition-delay: 0.1s;
+    --progress: 100 !important;
+    background: conic-gradient(#2aac78 calc(var(--progress, 0) * 1%), #d8e1e6 0deg);
+    opacity: 1;
+}
+.displaysizelevel:has(.displaysizebtn:hover) .progress-circle::after {
+    background: #2aac78;
+}
+.progress-circle::before {
+    content: "";
+    position: absolute;
+    width: 12.5%;
+    height: 12.5%;
+    background: #2aac78;
+    border-radius: 50%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) rotate(calc(var(--progress) * 3.6deg));
+}
+.progress-circle::after {
+    content: "";
+    position: absolute;
+    width: 12.5%;
+    height: 12.5%;
+    background: #2aac78;
+    border-radius: 50%;
+    left: 50%;
+    top: 0;
+    transform-origin: 50% 396%;
+    transform: translateX(-50%) rotate(calc(var(--progress) * 3.6deg));
+}

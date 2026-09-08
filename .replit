@@ -1,3 +1,5 @@
+run = "mvn -B compile exec:java"
+modules = ["java-graalvm22.3"]
 [nix]
 channel = "stable-25_05"
 

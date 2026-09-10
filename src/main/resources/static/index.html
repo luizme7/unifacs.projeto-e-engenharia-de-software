@@ -3,6 +3,7 @@
     <head>
         <title>Mapa Saúde</title>
         <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </head>
     <body>
         <section class="header">
@@ -11,9 +12,7 @@
                     SaúdeMap
                 </div>
                 <div class="nav-item">
-                    <div class="search bar">
-                        Pesquise uma cidade, bairro ou unidade de saúde
-                    </div>
+                    <input class="search bar" type="text" placeholder="Pesquise uma cidade, bairro ou unidade de saúde">
                 </div>
                 <div class="nav-item">
                     <div class="local bar">
@@ -37,18 +36,45 @@
                     </div>
                     <label id="count_outros">70 outros</label>
                 </div>
+                <div class="sectionbreak"></div>
                 <div class="displayfilters">
                     <div class="displaysizefilter">
                         <label class="title">Filtros</label>
-                        <div class="filter" id="filter_ubs">UBS</div>
-                        <div class="filter" id="filter_upas">UPA</div>
-                        <div class="filter" id="filter_hospitais">Hospital</div>
-                        <div class="filter" id="filter_outros">Outros</div>
+                        <div class="filter" id="filter_ubs">
+                            <input type="checkbox" id="filter_ubs_checkbox" checked readonly>
+                            UBS
+                        </div>
+                        <div class="filter" id="filter_upas">
+                        <input type="checkbox" id="filter_upas_checkbox" readonly>
+                            UPA
+                        </div>
+                        <div class="filter" id="filter_hospitais">
+                            <input type="checkbox" id="filter_hospitais_checkbox" readonly>
+                            Hospital
+                        </div>
+                        <div class="filter" id="filter_outros">
+                            <input type="checkbox" id="filter_outros_checkbox" readonly>
+                            Outros
+                        </div>
                     </div>
                     <div class="displaysizelevel">
                         <div class="progress-circle displaysizeprogress" style="--progress: 25;"></div>
                         <button class="displaysizebtn">25%</button>
                     </div>
+                </div>
+                <div class="sectionbreak"></div>
+                <div class="displaydistance">
+                    <div class="displaytopic">
+                        <div class="group">
+                            <label class="title">Distancia</label>
+                            <label> (m)</label>
+                        </div>
+                        <div class="scrollbarinput">
+                            <div class="line"></div>
+                            <div class="ball"></div>
+                        </div>
+                    </div>
+                    <button class="title bar displaysubmit">Aplicar filtros</button>
                 </div>
             </div>
         </section>

@@ -23,9 +23,12 @@ public class CsvService {
 
     private List<RegistroLocalizacao> cache;
 
+
     @PostConstruct
     public void carregarNaInicializacao() throws IOException {
         List<RegistroLocalizacao> registros = new ArrayList<>();
+
+        //permite com que consiga pegar e tratar os dados do arquivo csv, separando os por ';' 
 
         try (Reader reader = new InputStreamReader(
                 new ClassPathResource("Unidades_Basicas_Saude-UBS.csv").getInputStream());
@@ -36,16 +39,16 @@ public class CsvService {
                      .setSkipHeaderRecord(true)
                      .build()
                      .parse(reader)) {
-
+            // Separa os dados de Latitude e Longitude para melhor uso dentro da aplicação.
             for (CSVRecord record : parser) {
                 String latStr = record.get("LATITUDE");
                 String lonStr = record.get("LONGITUDE");
 
-
+            // Faz com que ignore linhas vazias
                  if (latStr == null || latStr.isBlank() || lonStr == null || lonStr.isBlank()) {
                  continue;
                     }
-
+            // Muda o padrão de separação de casa numerica para o formato universal.
                 double lat = Double.parseDouble(latStr.replace(",", "."));
                 double lon = Double.parseDouble(lonStr.replace(",", "."));
 

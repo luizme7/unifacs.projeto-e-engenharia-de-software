@@ -145,21 +145,23 @@ button {
 
 #results {
     width: 100%;
-    height: calc(100% - (50% - 45vh + 6rem + 2vw));
+    height: calc(100% - (50% - 45vh + 4rem + 2vw));
     position: fixed;
     top: calc(50% - 45vh + 4rem + 2vw);
-    background: #f3f3f3;
+    background: #fefefe;
     align-content: start;
-    padding: 1rem 0px;
     overflow: auto;
     display: none;
-    gap: 1vw;
 }
 
 #results .result {
     cursor: pointer;
-    padding: 1rem;
     background: #fefefe;
+    padding: 1rem 1rem 0 1rem;
+}
+
+#results .sectionbreak {
+    margin-top: 1rem;
 }
 
 #results .result-coordinates {

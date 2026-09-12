@@ -36,10 +36,12 @@ async function searchLocal() {
 }
 
 function show_results(results) {
-    resultsContainer.innerHTML = "";
+    resultsContainer.innerHTML = "<div class='sectionbreak'></div>";
+    resultsContainer.style.textAlign = "left";
     if (results.length === 0) {
         resultsContainer.innerHTML =
             "Nenhum resultado encontrado.";
+        resultsContainer.style.textAlign = "center";
         return;
     }
     results.forEach((result) => {
@@ -53,6 +55,7 @@ function show_results(results) {
                 Latitude: ${result.lat}
                 Longitude: ${result.lon}
             </div>
+            <div class="sectionbreak"></div>
         `;
         div.addEventListener("click", () => {
             move_to(

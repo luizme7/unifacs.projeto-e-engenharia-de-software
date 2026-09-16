@@ -47,6 +47,11 @@ button {
     scrollbar-color: #30363d #fefefe;
 }
 
+section {
+    z-index: 3;
+    position: fixed;
+}
+
 /* Header */
 .nav {
     position: fixed;
@@ -355,4 +360,10 @@ button {
 
 .progress-circle::after {
     transform-origin: 50% 396%;
+}
+
+#map {
+    height: 105%;
+    width: 100%;
+    background: rgb(153, 217, 242);
 }

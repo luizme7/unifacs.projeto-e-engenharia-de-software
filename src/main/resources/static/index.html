@@ -12,7 +12,7 @@
                     SaúdeMap
                 </div>
                 <div class="nav-item">
-                    <input class="search bar" type="text" placeholder="Pesquise uma cidade, bairro ou unidade de saúde">
+                    <input id="search" class="search bar" type="text" placeholder="Pesquise uma cidade, bairro ou unidade de saúde">
                 </div>
                 <div class="nav-item">
                     <div class="local bar">
@@ -77,6 +77,11 @@
                     <button class="title bar displaysubmit">Aplicar filtros</button>
                 </div>
             </div>
+            <div id="results"></div>
         </section>
+        <div style="width: 100%; height: 100%; overflow: hidden;">
+            <iframe width="100%" height="105%" id="map" src="https://www.openstreetmap.org/export/embed?bbox=-84.77050781250001%2C-33.174341551002065%2C-21.7529296875%2C7.798078531355303&amp;layer=mapnik" style="border: none;"></iframe>
+        </div>
+        <script src="search.js"></script>
     </body>
 </html>

@@ -9,7 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Servidor iniciado na porta 8081");
+        System.out.println("Starting on port:8081");
         SpringApplication.run(Main.class, args);
+        System.out.println("Server started on: http://localhost:8081");
     }
 }
